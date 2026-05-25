@@ -120,4 +120,30 @@ WHERE department = 'Sales'
 
 - **GRC / Risk‑Logic**  
   - This is a classic **multi‑department applicability** rule, often seen in GRC documents.
+  ## 6. All employees not in IT
+
+**Query**:
+```sql
+SELECT *
+FROM employees
+WHERE NOT department = 'Information Technology';
+```
+
+**Relevant frameworks**:
+
+- **ISO 27001 A.5 – Information Security Policies**  
+  - A.5.1.1: Management directive on information security.  
+  - This supports **control applicability clauses** that exclude specific groups.
+
+- **Change‑Management / Risk‑Register**  
+  - This is the **SQL equivalent** of “apply this control to all departments except IT.”
+
+---
+
+## 7. General Observations
+
+- **SQL as a GRC tool**: These queries show how **simple SQL** can underpin **risk‑logic**, incident triage, and control‑design.  
+- **Risk‑Logic and Frameworks**: The same patterns (`AND`, `OR`, `NOT`, `LIKE`) map directly to **inclusion/exclusion rules** in policies and risk registers.  
+- **Audit‑Ready**: Each query is **clean, well‑scoped, and easy to document**, which is important for **auditors** or **non‑technical stakeholders**.
+
   
