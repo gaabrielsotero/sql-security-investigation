@@ -6,7 +6,7 @@ This repository demonstrates how **SQL** can be used in a **security and risk co
 - Scoping security updates to specific departments and locations  
 - Framing evidence‑gathering steps for auditors or non‑technical stakeholders
 
-This is not a generic course exercise; it’s a **risk‑oriented lab** that mirrors how GRC / IT‑Risk analysts use SQL to turn raw logs into **actionable risk information**.
+This is a **risk‑oriented lab** that mirrors how GRC / IT‑Risk analysts use SQL to turn raw logs into **actionable risk information**.
 
 ---
 
@@ -18,7 +18,7 @@ In this project, I:
 - Filtered `employees` to scope security updates to specific departments and office buildings.  
 - Used `AND`, `OR`, `NOT`, and `LIKE` patterns that mirror **risk‑logic inclusion/exclusion rules**.
 
-This helps show recruiters that I can:
+This helps:
 
 - slice and filter data for **incident triage**,  
 - map SQL conditions to **control scoping** and **risk‑logic** (e.g., ISO 27001 A.9, NIS2, DORA),  
@@ -28,13 +28,19 @@ This helps show recruiters that I can:
 
 ## What You’ll Find Here
 
-- `SECURITY_INVESTIGATION_QUERIES.md`: SQL queries with explanations.  
-- `RISK_MAPPING.md`: mapping of each query to risk‑management and compliance principles (e.g., ISO 27001, NIS2, DORA).  
+- [`SECURITY_INVESTIGATION_QUERIES.md`](SECURITY_INVESTIGATION_QUERIES.md): SQL queries with explanations.  
+- [`RISK_MAPPING.md`](RISK_MAPPING.md): mapping of each query to risk‑management and compliance principles (e.g., ISO 27001, NIS2, DORA, GDPR).  
 - `data_samples/`: lightweight CSV examples of `log_in_attempts` and `employees` schemas.
 
-These artifacts are meant to be:
+---
 
-- **professionally written**,  
-- **framework‑aware**,  
-- and easy to reference in your CV, LinkedIn, or internal interviews.
+## Schema Assumptions
 
+For clarity, this lab assumes two tables:
+
+- `log_in_attempts` with columns:  
+  - `login_id`, `employee_id`, `login_date`, `login_time`, `country`, `success`.  
+- `employees` with columns:  
+  - `employee_id`, `name`, `department`, `office`.
+
+These assumptions are noted here so auditors or non‑technical reviewers understand the **data model** behind the queries.
